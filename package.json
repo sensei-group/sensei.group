@@ -2,7 +2,7 @@
   "name": "@sensei-group/site",
   "version": "0.1.2",
   "private": true,
-  "packageManager": "pnpm@10",
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -29,6 +29,7 @@
     "clsx": "^2.1.1",
     "ethers": "^6.11.1",
     "gsap": "^3.12.7",
+    "lucide-react": "^0.475.0",
     "mobx": "^6.12.3",
     "mobx-react-lite": "^4.0.7",
     "mobx-utils": "^6.0.8",
@@ -67,6 +68,5 @@
     "onlyBuiltDependencies": [
       "protobufjs"
     ]
-  },
-  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
+  }
 }
