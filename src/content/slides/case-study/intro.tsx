@@ -23,7 +23,7 @@ export default {
                             Sensei
                         </span>
                         <span className='text-4xl 2xl:text-5xl 2xl:leading-[79px] tracking-[0.16em] text-center font-normal font-sans'>
-                            THE VENTURE AGENCY THST MSKES YOUR COMPANY LEGENDARY.
+                            VENTURE BOLDLY. BECOME LEGENDARY.
                         </span>
                     </div>
                 )
