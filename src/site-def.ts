@@ -6,4 +6,7 @@ export default {
     common: mainNav,
   },
   footer: footer.standard,
+  logoText: 'Sensei',
+  iconKey: 'SenseiLogo',
+  logoURL: 'https://hanzo.ai/'
 } satisfies SiteDef

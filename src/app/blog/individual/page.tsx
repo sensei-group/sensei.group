@@ -1,12 +1,7 @@
-import React from "react";
-
-import "@/blocks/registerComponents";
+import React from "react"
 
 import { IndividualBlog } from '@/components/component/individual-blog'
 
-const page = () => {
-    return (
-        <IndividualBlog />
-    );
-};
-export default page;
+const Page: React.FC = () => ( <IndividualBlog /> )
+
+export default Page
