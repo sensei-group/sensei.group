@@ -1,12 +1,7 @@
-import React from "react";
-
-import "@/blocks/registerComponents";
+import React from "react"
 
 import { AI } from '@/components/component/ai'
 
-const page = () => {
-    return (
-        <AI />
-    );
-};
-export default page;
+const Page: React.FC = () => ( <AI /> )
+
+export default Page

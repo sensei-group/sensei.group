@@ -4,11 +4,15 @@ import {
   RootLayout as RootLayoutCore, 
   viewport as ViewportCode, 
 } from '@hanzo/brand/root-layout'
-import './global.css'
+import { Footer } from '@hanzo/brand'
 
+import './global.css'
+import "@/blocks/register"
 
 import siteDef from '@/site-def'
 import _metadata from '@/metadata'
+
+import RegisterIconsClientComponent from '@/components/icons/register-icons'
 
 export const metadata = { ..._metadata }
 export const viewport = { ...ViewportCode}
@@ -16,8 +20,10 @@ export const viewport = { ...ViewportCode}
 const RootLayout: React.FC<PropsWithChildren> = async ({
   children
 }) =>  (
-  <RootLayoutCore siteDef={siteDef} showHeader={true}>
+  <RootLayoutCore siteDef={siteDef} showHeader>
     {children}
+    <Footer />
+    <RegisterIconsClientComponent />
   </RootLayoutCore>
 )
 
