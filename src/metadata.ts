@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export default {
-  metadataBase: new URL('https://hanzo.ai'),
+  metadataBase: new URL('https://sensei.group'),
   title: {
     default: 'Sensei',
     template: '%s | Sensei',
@@ -15,31 +15,31 @@ export default {
       rel: 'icon',
       type: 'image/png',
       sizes: '16x16',
-      url: '/assets/hanzo-site-icons-white/favicon-16x16.png'
+      url: '/assets/sensei-site-icons/favicon-16x16.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '32x32',
-      url: '/assets/hanzo-site-icons-white/favicon-32x32.png'
+      url: '/assets/sensei-site-icons/favicon-32x32.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '192x192',
-      url: '/assets/hanzo-site-icons-white/android-chrome-192x192.png'
+      url: '/assets/sensei-site-icons/android-chrome-192x192.png'
     },
     {
       rel: 'icon',
       type: 'image/png',
       sizes: '512x512',
-      url: '/assets/hanzo-site-icons-white/android-chrome-512x512.png'
+      url: '/assets/sensei-site-icons/android-chrome-512x512.png'
     },
     {
       rel: 'apple-touch-icon',
       type: 'image/png',
       sizes: "180x180",
-      url: '/assets/hanzo-site-icons-white/apple-touch-icon.png'
+      url: '/assets/sensei-site-icons/apple-touch-icon.png'
     },
   ],
   //manifest: '/site.webmanifest',

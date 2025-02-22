@@ -50,7 +50,7 @@ export function IndividualBlog() {
             </p>
             <figure>
               <img
-                src="/placeholder.svg"
+                src="/blog/placeholder.svg"
                 alt="AI Visualization"
                 width={1250}
                 height={340}
@@ -85,7 +85,7 @@ export function IndividualBlog() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Avatar className="w-8 h-8 border">
-                        <AvatarImage src="/placeholder-user.jpg" alt="@shadcn" />
+                        <AvatarImage src="/blog/placeholder-user.jpg" alt="@shadcn" />
                         <AvatarFallback>AC</AvatarFallback>
                       </Avatar>
                       <div className="font-bold">John Doe</div>
@@ -113,7 +113,7 @@ export function IndividualBlog() {
                   <div className="space-y-2 pl-8">
                     <div className="flex items-center gap-2">
                       <Avatar className="w-8 h-8 border">
-                        <AvatarImage src="/placeholder-user.jpg" alt="@shadcn" />
+                        <AvatarImage src="/blog/placeholder-user.jpg" alt="@shadcn" />
                         <AvatarFallback>AC</AvatarFallback>
                       </Avatar>
                       <div className="font-bold">Jane Smith</div>
