@@ -164,7 +164,7 @@ export function Blog() {
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
                       <Avatar className="w-8 h-8 border">
-                        <AvatarImage src="/placeholder-user.jpg" alt="@shadcn" />
+                        <AvatarImage src="/blog/placeholder-user.jpg" alt="@shadcn" />
                         <AvatarFallback>AC</AvatarFallback>
                       </Avatar>
                       <div className="font-bold">John Doe</div>
@@ -192,7 +192,7 @@ export function Blog() {
                   <div className="space-y-2 pl-8">
                     <div className="flex items-center gap-2">
                       <Avatar className="w-8 h-8 border">
-                        <AvatarImage src="/placeholder-user.jpg" alt="@shadcn" />
+                        <AvatarImage src="/blog/placeholder-user.jpg" alt="@shadcn" />
                         <AvatarFallback>AC</AvatarFallback>
                       </Avatar>
                       <div className="font-bold">Jane Smith</div>
