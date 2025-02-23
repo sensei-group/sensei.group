@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@hanzo/auth": "*",
-    "@hanzo/brand": "1.0.9",
+    "@hanzo/brand": "1.1.0",
     "@hanzo/commerce": "*",
-    "@hanzo/ui": "*",
+    "@hanzo/ui": "4.5.0",
     "@hookform/resolvers": "^3.3.4",
     "@mailchimp/mailchimp_transactional": "^1.0.59",
     "@next/mdx": "14.1.0",
