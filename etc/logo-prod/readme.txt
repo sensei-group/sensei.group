@@ -1,0 +1,1 @@
+this svg was create by hand in InkScape from a png that ZK gave AA

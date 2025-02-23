@@ -43,7 +43,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
@@ -61,7 +61,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
@@ -79,7 +79,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
@@ -97,7 +97,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
@@ -115,7 +115,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
@@ -133,7 +133,7 @@ export function AllBlog() {
                   <span className="sr-only">View</span>
                 </Link>
                 <img
-                  src="/blog/placeholder.svg"
+                  src="/assets/blog/placeholder.svg"
                   alt="Cover image"
                   width={200}
                   height={200}
