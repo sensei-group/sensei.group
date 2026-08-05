@@ -41,7 +41,8 @@ tsconfig.tsbuildinfo
 *.orig
 
 # lock files
-pnpm-lock.yaml
+# pnpm-lock.yaml is tracked on purpose: this is a deployed app, and the image
+# build resolves dependencies from it (`--frozen-lockfile`).
 yarn.lock
 package-lock.json
 .vercel

@@ -1,0 +1,95 @@
+diff --git a/server/firebase-support.ts b/server/firebase-support.ts
+index 2b9f2e352dd07ebab03b17442213933e3dd4966d..c74532d2646e62e00b9c48f5dd460ac3cf4410b1 100644
+--- a/server/firebase-support.ts
++++ b/server/firebase-support.ts
+@@ -35,15 +35,20 @@ try {
+ 
+ const USER_INFO_COLLECTION = 'USER_INFO'
+ 
+-const auth = getAuth(firebaseApp)
+-const db = getFirestore(firebaseApp as App, 'accounts')
++// Resolve lazily: `getAuth`/`getFirestore` throw when no app was initialized,
++// which would crash at *import* time and defeat the credential guard above.
++// Deferring to first use keeps this module importable without credentials.
++let _auth: ReturnType<typeof getAuth> | undefined
++let _db: ReturnType<typeof getFirestore> | undefined
++const auth = () => (_auth ??= getAuth(firebaseApp))
++const db = () => (_db ??= getFirestore(firebaseApp as App, 'accounts'))
+ 
+ async function isUserAuthenticated(session: string | undefined = undefined) {
+   const _session = session ?? (await getSession())
+   if (!_session) return false
+ 
+   try {
+-    const isRevoked = !(await auth.verifySessionCookie(_session, true))
++    const isRevoked = !(await auth().verifySessionCookie(_session, true))
+     return !isRevoked
+   } catch (error) {
+     console.log(error)
+@@ -58,9 +63,9 @@ export async function getUserServerSide(): Promise<HanzoUserInfoValue | null> {
+     return null
+   }
+ 
+-  const decodedIdToken = await auth.verifySessionCookie(session!)
+-  const currentUser = await auth.getUser(decodedIdToken.uid)
+-  const walletAddress = await db.collection(USER_INFO_COLLECTION).doc(currentUser.email ?? '').get()
++  const decodedIdToken = await auth().verifySessionCookie(session!)
++  const currentUser = await auth().getUser(decodedIdToken.uid)
++  const walletAddress = await db().collection(USER_INFO_COLLECTION).doc(currentUser.email ?? '').get()
+ 
+   return {
+     email: currentUser.email ?? '',
+@@ -86,11 +91,11 @@ export const generateCustomToken = async (): Promise<{success: boolean, token: s
+     return {success: false, token: null}
+   }
+ 
+-  const decodedIdToken = await auth.verifySessionCookie(session!)
+-  const currentUser = await auth.getUser(decodedIdToken.uid)
++  const decodedIdToken = await auth().verifySessionCookie(session!)
++  const currentUser = await auth().getUser(decodedIdToken.uid)
+ 
+   try {
+-    const token = await auth.createCustomToken(currentUser.uid)
++    const token = await auth().createCustomToken(currentUser.uid)
+     return {success: true, token}
+   } catch (e) {
+     console.error('Error generating custom token', e)
+@@ -99,10 +104,10 @@ export const generateCustomToken = async (): Promise<{success: boolean, token: s
+ }
+ 
+ export async function createSessionCookie(idToken: string, sessionCookieOptions: SessionCookieOptions) {
+-  return auth.createSessionCookie(idToken, sessionCookieOptions)
++  return auth().createSessionCookie(idToken, sessionCookieOptions)
+ }
+ 
+ export async function revokeAllSessions(session: string) {
+-  const decodedIdToken = await auth.verifySessionCookie(session)
+-  return await auth.revokeRefreshTokens(decodedIdToken.sub)
++  const decodedIdToken = await auth().verifySessionCookie(session)
++  return await auth().revokeRefreshTokens(decodedIdToken.sub)
+ }
+diff --git a/service/impl/firebase-support.ts b/service/impl/firebase-support.ts
+index 8357b835f16d08c29e07e63bacb41d9b96e7aed2..fd60bff83d8b73d8ad185f7a1d03aa690f06a860 100644
+--- a/service/impl/firebase-support.ts
++++ b/service/impl/firebase-support.ts
+@@ -25,10 +25,17 @@ export const firebaseConfig = {
+   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+ }
+ 
+-const firebaseApp = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0]
+-export const auth = getAuth(firebaseApp)
++// Only initialize when web config is actually present. `getAuth` throws
++// `auth/invalid-api-key` at *module scope* otherwise, which 500s every page that
++// merely renders the auth widget. Unconfigured => auth actions fail at their
++// point of use rather than taking the whole site down.
++const hasWebConfig = !!firebaseConfig.apiKey && !!firebaseConfig.projectId
++const firebaseApp = hasWebConfig
++  ? (getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0])
++  : undefined
++export const auth = (hasWebConfig ? getAuth(firebaseApp) : undefined) as ReturnType<typeof getAuth>
+ // :aa TODO should be in module conf in host app
+-export const db = getFirestore(firebaseApp, 'accounts')
++export const db = (hasWebConfig ? getFirestore(firebaseApp!, 'accounts') : undefined) as ReturnType<typeof getFirestore>
+ 
+ export async function loginWithProvider(provider: string): Promise<{ success: boolean, user: User | null }> {
+   const authProvider = (() => {

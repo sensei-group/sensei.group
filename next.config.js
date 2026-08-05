@@ -7,6 +7,10 @@ const watchPluginConfig = require('./next-conf/watch.next.config')
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   reactStrictMode: true,
+  // Self-contained server bundle for the container image. Every route in this
+  // app is server-rendered on demand (device detection runs in middleware),
+  // so there is no static export to fall back on.
+  output: 'standalone',
   images: {
     remotePatterns: [
       {

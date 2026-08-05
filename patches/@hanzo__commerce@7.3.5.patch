@@ -1,0 +1,31 @@
+diff --git a/components/checkout/payment-step-form/methods/card.tsx b/components/checkout/payment-step-form/methods/card.tsx
+index 9d041fc8e6a203e72dee9b01065fcd50efccdaf9..7121a6a2533699d2577fcb87046e2e231e054c7c 100644
+--- a/components/checkout/payment-step-form/methods/card.tsx
++++ b/components/checkout/payment-step-form/methods/card.tsx
+@@ -79,7 +79,7 @@ const PayWithCard: React.FC<PaymentMethodComponentProps> = observer(({
+         email,
+       },
+       currencyCode: 'USD',
+-      intent: 'CHARGE',
++      intent: 'CHARGE' as const,
+     }
+   }
+ 
+@@ -125,7 +125,7 @@ const PayWithCard: React.FC<PaymentMethodComponentProps> = observer(({
+        * Identifies the calling form with a verified application ID generated from
+        * the Square Application Dashboard.
+        */
+-      applicationId={process.env.NEXT_PUBLIC_SQUARE_APPLICATION_ID}
++      applicationId={process.env.NEXT_PUBLIC_SQUARE_APPLICATION_ID ?? ''}
+       /**
+        * Invoked when payment form receives the result of a tokenize generation
+        * request. The result will be a valid credit card or wallet token, or an error.
+@@ -146,7 +146,7 @@ const PayWithCard: React.FC<PaymentMethodComponentProps> = observer(({
+        * Identifies the location of the merchant that is taking the payment.
+        * Obtained from the Square Application Dashboard - Locations tab.
+        */
+-      locationId={process.env.NEXT_PUBLIC_SQUARE_LOCATION_ID}
++      locationId={process.env.NEXT_PUBLIC_SQUARE_LOCATION_ID ?? ''}
+     >
+       <ApplyTypography className='flex flex-col mt-6 gap-1'>
+         {transactionStatus === 'paid' ? (
