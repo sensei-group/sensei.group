@@ -1,0 +1,5 @@
+images:
+  - name: sensei-group
+    context: .
+    dockerfile: Dockerfile
+    repo: ghcr.io/hanzoai/sensei-group
