@@ -1,39 +1,16 @@
-'use client'
 import React from 'react'
-import { useParams } from 'next/navigation'
-import { ScreenfulBlockComponent as Screenful } from '@hanzo/ui/blocks'
-import { individual_case_study_tiles } from '@/content'
-import { NotFound as NotFoundCommon } from '@hanzo/brand'
-import siteDef from '@/site-def'
 
-type Props = {
-    searchParams?: { [key: string]: string | string[] | undefined }
-}
+import case_studies from '@/content/case-study'
+import CaseStudy from './case-study'
 
-const Page: React.FC = ({ searchParams }: Props) => {
-    const agent = searchParams?.agent as string
-    const params = useParams<{ slug: string }>()
-
-    return (parseInt(params.slug) <= 10 ? <>
-        {
-            individual_case_study_tiles.map((data, index) => {
-                return (
-                    <Screenful
-                        block={data}
-                        initialInView={index === 0}
-                        agent={agent}
-                        snapTile
-                        key={`section-${index}`}
-                        contentClx='overflow-hidden'
-                        clx='overflow-hidden'
-                    />
-                )
-            })
-        }
-    </>
-    :
-    <NotFoundCommon siteDef={siteDef}/>
+/*
+  Static export: every case study gets its own pre-rendered page.
+  Ids come from the content itself, so adding a case study is enough.
+*/
+export const generateStaticParams = () => (
+  case_studies.map(({ id }) => ({ slug: String(id) }))
 )
-}
+
+const Page: React.FC = () => (<CaseStudy />)
 
 export default Page

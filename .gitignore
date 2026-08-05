@@ -41,7 +41,6 @@ tsconfig.tsbuildinfo
 *.orig
 
 # lock files
-pnpm-lock.yaml
 yarn.lock
 package-lock.json
 .vercel

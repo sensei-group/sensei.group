@@ -1,0 +1,277 @@
+import type { LinkDef } from '@hanzo/ui/types'
+import {
+  AI, 
+  APIs, 
+  Advertising, 
+  Analytics,
+  Blockchain, 
+  Blog, 
+  Changelog, 
+  Chat, 
+  Commerce, 
+  Crowdfunding, 
+  CustomerSupport, 
+  Customers, 
+  DeveloperDocs, 
+  Engine, 
+  FAQs, 
+  Guides, 
+  HanzoMenuLogo, 
+  Integrations, 
+  Marketing, 
+  Payments, 
+  Platform, 
+  ResourceCenter, 
+  ShopJS, 
+  Templates, 
+  WebApps 
+} from './icons'
+
+export default [
+    {
+      title: "Products",
+      
+      href: "#",
+      newTab: false,
+      childMenu: [
+        {
+          groupName:"DX Platform",
+          title: "AI",
+          icon: <AI  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Powering breakthroughs" //insert string to here
+        }, {
+          groupName:"DX Platform",
+          title: "Blockchain",
+          icon: <Blockchain  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Decentralized application" //insert string to here
+        }, {
+          groupName:"DX Platform",
+          title: "Commerce",
+          icon: <Commerce  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents: "Enhancing online profitability",
+        }, {
+          groupName:"Managed Infrastructure",
+          title: "Analytics",
+          icon: <Analytics  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Powering breakthroughs" //insert string to here
+        }, {
+          groupName:"Managed Infrastructure",
+          title: "Advertising",
+          icon: <Advertising  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Creating conversation events" //insert string to here
+        }, {
+          groupName:"Managed Infrastructure",
+          title: "Marketing",
+          icon: <Marketing  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Branding & market penetration" //insert string to here
+        },{
+          groupName:"Managed Infrastructure",
+          title: "Payments",
+          icon: <Payments  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Seamless transactions" //insert string to here
+        },{
+          groupName:"OpenSource",
+          title: "Hanzo.js",
+          icon: <HanzoMenuLogo height={20} width={20} className='opacity-50'/>,
+          href: "http://github.com/hanzoai/hanzo.js",
+          newTab: false,
+          contents:"Powering breakthroughs" //insert string to here
+        },{
+          groupName:"OpenSource",
+          title: "Engine",
+          icon: <Engine  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Decentralized application" //insert string to here
+        },{
+          groupName:"OpenSource",
+          title: "APIs",
+          icon: <APIs  size={25}/>,
+          href: "https://hanzo.readme.io/docs/introduction-to-our-restful-api",
+          newTab: false,
+          contents:"Enhancing online profitability" //insert string to here
+        },
+        {
+          groupName:"OpenSource",
+          title: "Shop.js",
+          icon: <ShopJS  size={25}/>,
+          href: "http://github.com/shopjs/shop.js",
+          newTab: false,
+          contents:"Powerful UI components" //insert string to here
+        },
+        {
+          groupName:"  ",
+          title: "Chat",
+          icon: <Chat  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Powering breakthroughs" //insert string to here
+        },
+        {
+          groupName:"  ",
+          title: "Crowdfunding",
+          icon: <Crowdfunding  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Decentralized application" //insert string to here
+        },
+      ]
+    },
+    {
+      title: "Solutions",
+      
+      href: "http://docs.hanzo.ai",
+      newTab: false,
+      childMenu: [
+        {
+          groupName:"Apps",
+          title: "AI Chat",
+          icon: <AI  size={25}/>,
+          href: "http://hanzo.ai/ai",
+          newTab: false,
+          contents:"Virtual assistance" //insert string to here
+        },{
+          groupName:"Apps",
+          title: "Blockchain Apps",
+          icon: <Blockchain  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Decentralized application" //insert string to here
+        },{
+          groupName:"Apps",
+          title: "ECommerce Apps",
+          icon: <Commerce  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Seamless online shopping" //insert string to here
+        },{
+          groupName:"Apps",
+          title: "Web Apps",
+          icon: <WebApps  size={25}/>,
+          href: "https://hanzo.ai/ai",
+          newTab: false,
+          contents:"Customized interfaces" //insert string to here
+        },{
+          groupName:"Industries",
+          title: "Crowdfunding",
+          icon: <Crowdfunding  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Public sale bootstrap" //insert string to here
+        },{
+          groupName:"Industries",
+          title: "Platform",
+          icon: <Platform  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Backend management" //insert string to here
+        }
+      ]
+    },
+    {
+      title: "Resources",
+          
+      href: "https://docs.hanzo.ai",
+      newTab: false,
+      childMenu: [
+        {
+          groupName:"Tools",
+          title: "Resource Center",
+          icon: <ResourceCenter  size={25}/>,
+          href: "/help",
+          newTab: false,
+          contents:"Dynamic solutions" //insert string to here
+        },{
+          groupName:"Tools",
+          title: "Integrations",
+          icon: <Integrations  size={25}/>,
+          href: "http://docs.hanzo.ai",
+          newTab: false,
+          contents:"Simplified onboarding" //insert string to here
+        },{
+          groupName:"Tools",
+          title: "Templates",
+          icon: <Templates  size={25}/>,
+          href: "http://github.com/hanzoai",
+          newTab: false,
+          contents:"Speedy app development" //insert string to here
+        },{
+          groupName:"Tools",
+          title: "Guides",
+          icon: <Guides  size={25}/>,
+          href: "http://github.com/hanzoai",
+          newTab: false,
+          contents:"Find help quickly" //insert string to here
+        },{
+          groupName:"Company",
+          title: "Customers",
+          icon: <Customers  size={25}/>,
+          href: "http://docs.hanzo.ai/",
+          newTab: false,
+          contents:"Trusted by the best teams" //insert string to here
+        },{
+          groupName:"Company",
+          title: "Blog",
+          icon: <Blog  size={25}/>,
+          href: "https://hanzo.ai/blog",
+          newTab: false,
+          contents:"Latest posts and changes" //insert string to here
+        },{
+          groupName:"Company",
+          title: "Changelog",
+          icon: <Changelog  size={25}/>,
+          href: "http://docs.hanzo.ai/",
+          newTab: false,
+          contents:"Manage deployments" //insert string to here
+        },{
+          groupName:"More",
+          title: "Developer docs",
+          icon: <DeveloperDocs  size={25}/>,
+          href: "http://docs.hanzo.ai/",
+          newTab: false,
+          contents:"Software explained" //insert string to here
+        },{
+          groupName:"More",
+          title: "Customer Support",
+          icon: <CustomerSupport  size={25}/>,
+          href: "https://hanzo.ai/help",
+          newTab: false,
+          contents:"Dedicated help 24/7" //insert string to here
+        },
+        {
+          groupName:"More",
+          title: "FAQs",
+          icon: <FAQs size={25}/>,
+          href: "http://docs.hanzo.ai/",
+          newTab: false,
+          contents:"Common queries" //insert string to here
+        },
+      ]
+    },
+    {
+      title: "Docs",
+      
+      href: "http://docs.hanzo.ai/",
+      newTab: false
+    },
+    {
+      title: "Pricing",
+      
+      href: "https://hanzo.ai",
+      newTab: false
+    }
+  ] satisfies LinkDef[]

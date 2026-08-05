@@ -6,6 +6,7 @@ const watchPluginConfig = require('./next-conf/watch.next.config')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+  output: 'export',
   reactStrictMode: true,
   images: {
     remotePatterns: [
@@ -23,8 +24,6 @@ const nextConfig = {
     // https://stackoverflow.com/questions/72621835/how-to-fix-you-may-need-an-appropriate-loader-to-handle-this-file-type-current
   transpilePackages: [
     '@hanzo/ui', 
-    '@hanzo/auth', 
-    '@hanzo/commerce', 
     '@hanzo/brand',
     '@luxfi/data'
   ],

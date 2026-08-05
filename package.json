@@ -12,18 +12,13 @@
     "tc": "tsc --noEmit"
   },
   "dependencies": {
-    "@hanzo/auth": "*",
     "@hanzo/brand": "1.1.0",
-    "@hanzo/commerce": "*",
     "@hanzo/ui": "4.5.0",
     "@hookform/resolvers": "^3.3.4",
-    "@mailchimp/mailchimp_transactional": "^1.0.59",
     "@next/mdx": "14.1.0",
     "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-slot": "^1.1.0",
-    "@splinetool/react-spline": "^2.2.6",
-    "@splinetool/runtime": "^1.0.68",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "ethers": "^6.11.1",
@@ -61,6 +56,9 @@
     "webpack-watch-files-plugin": "^1.2.1"
   },
   "pnpm": {
+    "overrides": {
+      "markdown-to-jsx": "7.4.7"
+    },
     "ignoredBuiltDependencies": [
       "protobufjs"
     ],
