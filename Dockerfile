@@ -11,4 +11,4 @@ RUN pnpm build
 FROM ghcr.io/hanzoai/static:0.4.1 AS serve
 COPY --from=build /src/out /public
 EXPOSE 3000
-ENTRYPOINT ["/static", "-port", "3000", "-root", "/public", "-404", "404.html"]
+ENTRYPOINT ["/static", "-port", "3000", "-root", "/public", "-spa"]
